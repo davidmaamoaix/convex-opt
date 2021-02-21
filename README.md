@@ -1,2 +1,2 @@
 # convex-opt
-My code for 10-725 Convex Optimization.
+My notes and code for 10-725 Convex Optimization.
