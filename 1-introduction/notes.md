@@ -8,11 +8,14 @@ tl;dr: minimizing a function.
 Regressions:
 - Least Squares
 - Least Absolute Deviations (robust)
+
 Regularized:
 - Lasso (with constraints)
+
 Classifications:
 - Logistic Regression
 - Range Loss (SVMs)
+
 Others:
 - Traveling Salesman
 - Planning/Discrete Opt.
