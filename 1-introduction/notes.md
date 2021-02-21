@@ -54,7 +54,7 @@ Conclusion: different algorithms work better in different optimization problems.
 
 ![equation](https://latex.codecogs.com/svg.latex?%5Cmin_%5Ctheta%20%5Cfrac%7B1%7D%7B2%7D%20%5Csum_%7Bi%3D1%7D%5En%20%28y_i%20-%20%5Ctheta_i%29%20%5E%202%20&plus;%20%5Clambda%20%5Csum_%7Bi%3D1%7D%5E%7Bn%20-%201%7D%20%7C%5Ctheta_i%20-%20%5Ctheta_%7Bi%20&plus;%201%7D%7C)
 
-Trivially, as  `lambda` decreases, more change points occur. We tune `lambda` to fit the more significant change points.
+Trivially, as  `lambda` decreases, more change points appear. We tune `lambda` to fit the more significant change points.
 
 ## Convexity
 
@@ -64,7 +64,7 @@ Trivially, as  `lambda` decreases, more change points occur. We tune `lambda` to
 
 ![equation](https://latex.codecogs.com/svg.latex?x%2Cy%20%5Cin%20C%20%5CLongrightarrow%20tx%20&plus;%20%281%20-%20t%29y%20%5Cin%20C)
 
-for t in [0, 1].
+for `t` in `[0, 1]`.
 
 Example: set of points in a convex shape.
 
