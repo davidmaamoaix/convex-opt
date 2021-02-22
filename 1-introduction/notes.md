@@ -90,7 +90,7 @@ is convex
 
 All optimization problems can be written as the following:
 
-![equation](https://latex.codecogs.com/svg.latex?%5Cmin_%7Bx%20%5Cin%20D%7D%20f%28x%29%20%5C%5C%5Ctext%7Bs.t.%7D%5C%3B%20g_i%28x%29%5Cle%200%2C%5C%3Bi%3D1%2C%5Cdots%20m%20%5C%5C%5Ctext%7Band%7D%5C%3Bh_j%28x%29%3D0%2C%5C%3Bj%3D1%2C%5Cdots%20r)
+![equation](https://latex.codecogs.com/png.latex?%5Cmin_%7Bx%20%5Cin%20D%7D%20f%28x%29%20%5C%5C%5Ctext%7Bs.t.%7D%5C%3B%20g_i%28x%29%5Cle%200%2C%5C%3Bi%3D1%2C%5Cdots%20m%20%5C%5C%5Ctext%7Band%7D%5C%3Bh_j%28x%29%3D0%2C%5C%3Bj%3D1%2C%5Cdots%20r)
 
 where `D` is the common domain of the 3 functions:
 
@@ -98,7 +98,7 @@ where `D` is the common domain of the 3 functions:
 
 A convex optimization problem is one such that all `f` (the criterion) and all `g` (the constraints) are convex functions, and all `h` are affine:
 
-![equation](https://latex.codecogs.com/svg.latex?h_j%28x%29%20%3D%20a_j%5E%5Ctop%20x%20&plus;%20b_j%2C%5C%3Bj%3D1%2C%5Cdots%20p)
+![equation](https://latex.codecogs.com/png.latex?h_j%28x%29%20%3D%20a_j%5E%5Ctop%20x%20&plus;%20b_j%2C%5C%3Bj%3D1%2C%5Cdots%20p)
 
 ### Local and Global Minima
 
@@ -106,6 +106,6 @@ In optimization problems, `x` is the local minima if `x` satisfies all the const
 
 ![equation](https://latex.codecogs.com/svg.latex?f%28x%29%20%5Cle%20f%28y%29%20%5C%3B%20%5Ctext%7Bfor%20all%20feasible%20%24y%24%7D%2C%20%5C%3B%5ClVert%20x%20-%20y%20%5CrVert_2%20%5Cle%20%5Crho)
 
-In convex problems, the above constraint is satisfied when `rho` is infinity, or for all feasible `y`.
+In convex problems, the above constraint is satisfied when `rho` is infinity (therefore for all feasible `y`).
 
 The local minima in a convex optimization problem is the global minima.
