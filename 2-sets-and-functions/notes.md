@@ -56,3 +56,12 @@ Normal cone (completely different from norm cone despite the name) is always con
 ![equation](https://latex.codecogs.com/svg.latex?N_C%28x%29%20%3D%20%5C%7Bg%3Ag%5E%5Ctop%20x%20%5Cge%20g%5E%5Ctop%20y%5C%7D)
 
 for any `x` and `y` in `C`.
+
+### Related Definitions
+
+- Conic combination: linear combination with all coefficient terms greater or equal to 0:
+
+![equation](https://latex.codecogs.com/png.latex?%5Ctheta_1%20x_1%20&plus;%20%5Cdots%20&plus;%20%5Ctheta_k%20x_k%2C%5C%3B%5Ctext%7Bwith%7D%5C%3B%5Ctheta%20%5Cle%200)
+
+- Conic hull of `C`: all conic combinations of elements in `C`
+
