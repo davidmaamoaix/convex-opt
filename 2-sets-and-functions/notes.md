@@ -4,7 +4,7 @@
 
 Recall that a convex set `C` is a set such that:
 
-![equation](https://latex.codecogs.com/svg.latex?x%2Cy%20%5Cin%20C%20%5CLongrightarrow%20tx%20&plus;%20%281%20-%20t%29y%20%5Cin%20C)
+![equation](https://latex.codecogs.com/png.latex?x%2Cy%20%5Cin%20C%20%5CLongrightarrow%20tx%20&plus;%20%281%20-%20t%29y%20%5Cin%20C)
 
 for `t` in `[0, 1]`.
 
@@ -27,11 +27,11 @@ Examples:
 
 A polyhedron can be constructed by a set of linear inequalities:
 
-![equation](https://latex.codecogs.com/svg.latex?%5C%7Bx%3AAx%5Cle%20b%5C%7D)
+![equation](https://latex.codecogs.com/png.latex?%5C%7Bx%3AAx%5Cle%20b%5C%7D)
 
 Notee that comparisons of vectors in 10-725 is interpreted component-wise:
 
-![equation](https://latex.codecogs.com/svg.latex?a%20%5Cle%20b%20%5Cto%20a_i%20%5Cle%20b_i%5C%3B%5Ctext%7Bfor%20all%7D%5C%3B%20i%3D1%2C%5Cdots%20n)
+![equation](https://latex.codecogs.com/png.latex?a%20%5Cle%20b%20%5Cto%20a_i%20%5Cle%20b_i%5C%3B%5Ctext%7Bfor%20all%7D%5C%3B%20i%3D1%2C%5Cdots%20n)
 
 ### Convex Hull
 
@@ -41,7 +41,7 @@ The convex hull of set `C` is all convex combinations of its elements; convex hu
 
 Cones are defined as such:
 
-![equation](https://latex.codecogs.com/svg.latex?x%20%5Cin%20C%20%5CLongrightarrow%20tx%20%5Cin%20C%20%5C%3B%5Ctext%7Bfor%20all%7D%5C%3B%20t%5Cge%200)
+![equation](https://latex.codecogs.com/png.latex?x%20%5Cin%20C%20%5CLongrightarrow%20tx%20%5Cin%20C%20%5C%3B%5Ctext%7Bfor%20all%7D%5C%3B%20t%5Cge%200)
 
 Cones are not necessarily convex.
 
@@ -49,11 +49,11 @@ Cones are not necessarily convex.
 
 Norm cone is define as:
 
-![equation](https://latex.codecogs.com/svg.latex?%5C%7B%28x%2C%20t%29%3A%5ClVert%20x%20%5CrVert%5Cle%20t%5C%7D)
+![equation](https://latex.codecogs.com/png.latex?%5C%7B%28x%2C%20t%29%3A%5ClVert%20x%20%5CrVert%5Cle%20t%5C%7D)
 
 Normal cone (completely different from norm cone despite the name) is always convex, and is defined as:
 
-![equation](https://latex.codecogs.com/svg.latex?N_C%28x%29%20%3D%20%5C%7Bg%3Ag%5E%5Ctop%20x%20%5Cge%20g%5E%5Ctop%20y%5C%7D)
+![equation](https://latex.codecogs.com/png.latex?N_C%28x%29%20%3D%20%5C%7Bg%3Ag%5E%5Ctop%20x%20%5Cge%20g%5E%5Ctop%20y%5C%7D)
 
 for any `x` and `y` in `C`.
 
@@ -75,7 +75,7 @@ Two disjoint convex set have a separating hyperplane between them.
 
 Formally, for two disjoint convex set `C` and `D`, there exists `a` and `b` such that:
 
-![equation](https://latex.codecogs.com/svg.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20b%5C%7D%2C%20D%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cge%20b%5C%7D)
+![equation](https://latex.codecogs.com/png.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20b%5C%7D%2C%20D%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cge%20b%5C%7D)
 
 ### Supporting Hyperplane Theorem
 
@@ -83,13 +83,16 @@ A point on the boundary of a convex set has a supporting hyperplane passing thro
 
 Formally, for non-empty convex set `C` and `x_0` (point on boundary), then there exists `a` such that:
 
-![equation](https://latex.codecogs.com/svg.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20a%5E%5Ctop%20x_0%5C%7D)
+![equation](https://latex.codecogs.com/png.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20a%5E%5Ctop%20x_0%5C%7D)
 
 ## Operations Preserving Convexity
 
 - Intersection: the intersection of convex sets is convex
 - Scaling and Translation: mapping a convex set with a linear transformation function results in another convex set
 - Affine Images and Preimages (same as above) (a preimage is the set of all `x` which, after applying function `f`, lies in `C`)
+- Nonnegative linear combination
+- Pointwise maximization
+- Partial minimization
 
 ### Example: Linear Matrix Inequality Solution Set
 
@@ -103,7 +106,7 @@ Proof of the set `C` of points `x` that satisfy the above inequality is convex:
 
 Consider
 
-![equation](https://latex.codecogs.com/svg.latex?f%3A%5Cmathbb%7BR%7D%5Ek%20%5Cto%20S%5En)
+![equation](https://latex.codecogs.com/png.latex?f%3A%5Cmathbb%7BR%7D%5Ek%20%5Cto%20S%5En)
 
 (to be continued)
 
@@ -115,12 +118,39 @@ Note that concave functions can be considered convex functions (just apply -1).
 
 - Strictly convex: strict inequality when interpolating (`0 < t < 1`) between two points on the function:
 
-![equation](https://latex.codecogs.com/svg.latex?f%28tx%20&plus;%20%281-t%29y%29%20%3C%20tf%28x%29%20&plus;%20%281-t%29f%28y%29%20%5C%5C%5Ctext%7Bfor%7D%5C%3B%200%3Ct%3C1)
+![equation](https://latex.codecogs.com/png.latex?f%28tx%20&plus;%20%281-t%29y%29%20%3C%20tf%28x%29%20&plus;%20%281-t%29f%28y%29%20%5C%5C%5Ctext%7Bfor%7D%5C%3B%200%3Ct%3C1)
 
 - Strongly convex: with parameter `m` (`m > 0`), `f` is `m` strongly convex if
 
-![equation](https://latex.codecogs.com/svg.latex?f%28x%29%20-%20%5Cfrac%7Bm%7D%7B2%7D%5ClVert%20x%5CrVert_2%5E2)
+![equation](https://latex.codecogs.com/png.latex?f%28x%29%20-%20%5Cfrac%7Bm%7D%7B2%7D%5ClVert%20x%5CrVert_2%5E2)
 
 is convex (at least as convex as quadratic function).
 
 Therefore, strong convexity implies strict convexity, which implies convexity.
+
+### Examples
+
+- Exponential functions
+- Power functions (`p \ge 1` or `p \le 0`)
+- Logarithm functions
+
+### Key Properties
+
+A function is convex if and only if its restrictions to any line is convex.
+
+Convex sublevel sets: if `f` is convex, then its sublevel sets
+
+![equation](https://latex.codecogs.com/png.latex?%5C%7Bx%5Cin%20dom%28f%29%3Af%28x%29%5Cle%20t%5C%7D)
+
+are convex (the converse is not true).
+
+More:
+- First-order characterization: if `f` is differentiable, then `f` is convex if and only if its domain is convex, and:
+
+![equation](https://latex.codecogs.com/png.latex?f%28y%29%20%5Cge%20f%28x%29%20&plus;%20%5Cnabla%20f%28x%29%5E%5Ctop%20%28y-x%29)
+
+In other words, `f` lies above its tangent line.
+
+- Second-order characterization: if `f` is twice differentiable, then `f` is convex if and only if its domain is convex, and its Hessian matrix is positive semidefinite:
+
+![equation](https://latex.codecogs.com/png.latex?%5Cnabla%5E2%20f%28x%29%20%5Csucccurlyeq%200)
