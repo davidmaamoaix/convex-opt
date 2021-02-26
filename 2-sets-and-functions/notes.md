@@ -65,3 +65,62 @@ for any `x` and `y` in `C`.
 
 - Conic hull of `C`: all conic combinations of elements in `C`
 
+## Properties of Convex Sets
+
+Some cool properties. Yay!
+
+### Separating Hyperplane Theorem
+
+Two disjoint convex set have a separating hyperplane between them.
+
+Formally, for two disjoint convex set `C` and `D`, there exists `a` and `b` such that:
+
+![equation](https://latex.codecogs.com/svg.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20b%5C%7D%2C%20D%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cge%20b%5C%7D)
+
+### Supporting Hyperplane Theorem
+
+A point on the boundary of a convex set has a supporting hyperplane passing through it.
+
+Formally, for non-empty convex set `C` and `x_0` (point on boundary), then there exists `a` such that:
+
+![equation](https://latex.codecogs.com/svg.latex?C%5Csubseteq%20%5C%7Bx%3Aa%5E%5Ctop%20x%5Cle%20a%5E%5Ctop%20x_0%5C%7D)
+
+## Operations Preserving Convexity
+
+- Intersection: the intersection of convex sets is convex
+- Scaling and Translation: mapping a convex set with a linear transformation function results in another convex set
+- Affine Images and Preimages (same as above) (a preimage is the set of all `x` which, after applying function `f`, lies in `C`)
+
+### Example: Linear Matrix Inequality Solution Set
+
+For a set of matrices `A` and symmetrical matrix `B`, a linear matrix inequality is in the form of:
+
+![equation](https://latex.codecogs.com/png.latex?x_1%20A_1&plus;%5Cdots&plus;x_k%20A_k%20%5Cpreccurlyeq%20B)
+
+where `x` is a vector os size `k`.
+
+Proof of the set `C` of points `x` that satisfy the above inequality is convex:
+
+Consider
+
+![equation](https://latex.codecogs.com/svg.latex?f%3A%5Cmathbb%7BR%7D%5Ek%20%5Cto%20S%5En)
+
+(to be continued)
+
+## Convex Functions
+
+Note that concave functions can be considered convex functions (just apply -1).
+
+### Modifiers
+
+- Strictly convex: strict inequality when interpolating (`0 < t < 1`) between two points on the function:
+
+![equation](https://latex.codecogs.com/svg.latex?f%28tx%20&plus;%20%281-t%29y%29%20%3C%20tf%28x%29%20&plus;%20%281-t%29f%28y%29%20%5C%5C%5Ctext%7Bfor%7D%5C%3B%200%3Ct%3C1)
+
+- Strongly convex: with parameter `m` (`m > 0`), `f` is `m` strongly convex if
+
+![equation](https://latex.codecogs.com/svg.latex?f%28x%29%20-%20%5Cfrac%7Bm%7D%7B2%7D%5ClVert%20x%5CrVert_2%5E2)
+
+is convex (at least as convex as quadratic function).
+
+Therefore, strong convexity implies strict convexity, which implies convexity.
