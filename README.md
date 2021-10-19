@@ -1,4 +1,7 @@
-# convex-opt
+# Convex Optimizations
+
+__Note: the notes of this course have been migrated to [this repo](https://github.com/davidmaamoaix/lecture-notes) (as TeX)__
+
 My notes and code for 10-725 Convex Optimization.
 
 ## Table of Content
