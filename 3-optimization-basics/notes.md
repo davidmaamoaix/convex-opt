@@ -22,7 +22,7 @@ Suppose
 - `f` is convex if `h` is convex and nondecreasing, `g` is convex
 - `f` is convex if `h` is convex and nonincreasing, `g` is concave
 - `f` is concave if `h` is concave and nondecreasing, `g` is concave
-- `f` is concave if `h` is concavee and nonincreasing, `g`  is convex
+- `f` is concave if `h` is concave and nonincreasing, `g`  is convex
 
 ### Example: Softmax (Log-sum-exp)
 
