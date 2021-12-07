@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=0.75in, top=1in, bottom=1in, a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{indentfirst}
+
+\newcommand{\mo}[1]{\lvert #1 \rvert}
+\newcommand{\mos}[1]{\lvert #1 \rvert^2}
+\newcommand{\mov}[1]{\lvert \vec{#1} \rvert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\p}{\partial}
+\newcommand{\iv}[1]{\langle #1 \rangle}
+\newcommand{\adj}{\text{adj}}
+\newcommand{\pmax}{\text{pmax}}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{prob}[prop]{Problem}
+\newtheorem{ex}{Exercise}
+
+\title{\vspace{-2.0cm}Convex Optimization Homework 1}
+\author{Linxuan Ma}
+
+\begin{document}
+	\maketitle
+	
+	\section{Convex Sets}
+	
+	\begin{prop}
+		A polyhedron $\{x \in \RR^n : Ax \leq b\}$ for $A \in \RR^{m \times n}$ and $b \in \RR^m$ is both convex and closed.
+	\end{prop}
+	\begin{proof}
+		The polyhedron $P = \{x \in \RR^n : Ax \leq b\}$ can be described as the intersection of $n(P)$ half-spaces, denoted by set $H$:
+		\begin{gather*}
+			A_{1,1}x_1 + A_{1,2}x_2 + \dots + A_{1,n}x_n \leq  b_1 \\
+			\dots \\
+			A_{m,1}x_1 + A_{m,2}x_2 + \dots + A_{m,n}x_n \leq  b_m
+		\end{gather*}
+		
+		$\forall a, b \in P$, both $a$ and $b$ are in all of the above half-spaces (by definition of intersection $P \in H_i$ for all $i$), and the line connecting them can be obtained via their convex combination $z(t) = tx + (1-t)y$ for $t \in [0, 1]$. Half-spaces are convex, and therefore for any half-space $H$, $x, y \in H \Rightarrow z(t) \in H$. Since the above is satisfied for all above half-spaces,  $z(t) \in P$ (definition of intersection). Therefore, $P$ satisfies that $x, y \in P \Rightarrow tx + (1-t)y \in P$, proving that $P$ is indeed convex.
+		
+		The closeness of $P$ can be proven by considering the open set complement $\overline{H_i}$ of every half-space $H_i$. $\bigcup_i \overline{H_i}$ is an open set, and $P = \bigcup_i H_i$ is its complement. Therefore $P$ is a closed set (definition of closeness).
+	\end{proof}
+	
+	\begin{prop}
+		Given a set of convex sets $S$, the intersection $\bigcap_i S_i$ is convex. Similarly, given a set of closed sets $S$, the intersection $\bigcap_i S_i$ is closed.
+	\end{prop}
+	
+	\begin{proof}
+		The intersection $P = \bigcap_i S_i$ is a subset of every $S_i$ (definition of intersection). For all $x, y \in P, t \in [0, 1]$, $tx + (1-t)y \in S_i$ for all $i$ (definition of convex set). The line $tx + (1-t)y$ is contained in every $S_i$, therefore it is contained in the intersection $P$ of all $S_i$ (definition of intersection).
+		
+		(Same as \textit{1.1}) The closeness of $P$ can be proven by considering the open set complement $\overline{H_i}$ of every half-space $H_i$. $\bigcup_i \overline{H_i}$ is an open set, and $P = \bigcup_i H_i$ is its complement. Therefore $P$ is a closed set (definition of closeness).
+	\end{proof}
+	
+	\begin{prob}
+		Give an example of a closed set in $\RR^2$ whose convex set is not closed.
+	\end{prob}
+	
+	\begin{proof}
+		The set of $(x, y)$ satisfying
+		\begin{gather*}
+			y \geq \frac{1}{x^2 + c}
+		\end{gather*}
+		where $c \in \RR_+$ is a closed set, while its convex hull is any $(x_c, y_c)$ satisfying $y > 0$ (an open set).
+	\end{proof}
+	
+\end{document}
