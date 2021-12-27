@@ -70,4 +70,50 @@
 		where $c \in \RR_+$ is a closed set, while its convex hull is any $(x_c, y_c)$ satisfying $y > 0$ (an open set).
 	\end{proof}
 	
+	\begin{prop}
+		Consider matrix $A \in \RR^{m \times n}$. If set $S \subseteq \RR^m$ is convex, then its pre-image of $S$ under $A$ is also convex. The same applies for closeness.
+	\end{prop}
+	
+	\begin{proof}
+		Let $P$ be the pre-image of $S$ under $A$. Consider points $x, y \in P$ and the image of their convex combination under $A$:
+		\begin{align*}
+			&A(tx + (1 - t)y) \\
+			\iff &A(tx) + A((1 - t)y) \\
+			\iff &t*Ax + (1-t) * Ay
+		\end{align*}
+		
+		$t*Ax + (1-t) * Ay \in S$ (definition of convexity) as $Ax$ and $Ay$ are both contained in $S$ (definition of pre-image). Therefore, $A(tx + (1 - t)y) \in S \Rightarrow tx + (1 - t)y \in P$.
+	\end{proof}
+	
+	\begin{prop}
+		Consider matrix $A \in \RR^{m \times n}$. If set $S \subseteq \RR^n$ is convex, then its image under $A$ is also convex.
+	\end{prop}
+	
+	\begin{proof}
+		Consider points $x, y \in A(S)$ and some points $x_p, y_p \in S$ such that $A(x_p) = x$, $A(y_p) = y$. Since $S$ is convex, then the convex combination of $x$ and $y$ can be is equivalent to:
+		\begin{align*}
+			&tx + (1 - t)y \\
+			\iff &t * A(x_p) + (1 - t) * A(y_p) \\
+			\iff &A(tx_p) + A((1 - t)y_p) \\
+			\iff &A(tx_p + (1 - t)y_p)
+		\end{align*}
+		
+		Since $S$ is convex, $tx_p + (1 - t)y_p \in S$. Therefore, $A(tx_p + (1 - t)y_p) \in A(S)$, and equivalently, $tx + (1 - t)y \in A(S)$.
+	\end{proof}
+	
+	\begin{prop}
+		Given an example of a matrix $A \in \RR^{m \times n}$ and a set $S \subseteq \RR^n$ that is closed and convex but such that $A(S)$ is not closed.
+	\end{prop}
+	
+	\begin{proof}
+		Consider the matrix $A: \RR^2 \to \RR^2$ that discards the $x$-component:
+		\begin{equation*}
+		\begin{bmatrix}
+			0&0\\0&1	
+		\end{bmatrix}
+		\end{equation*}
+	\end{proof}
+	
+	The image of the set $S = \{(x, y):y \geq 0.5^x\}$ is both closed and convex, yet its image under $A$ is $0 \times (0, \infty]$, which is not closed.
+	
 \end{document}
