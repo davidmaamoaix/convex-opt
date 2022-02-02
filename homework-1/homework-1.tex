@@ -136,4 +136,26 @@
 		Since $O$ is polyhedral, $f(O)$ preserves polyhedron and yields $P$. Therefore $P$ is a polyhedron.
 	\end{proof}
 	
+	\begin{prop}
+		If $Q \subseteq \RR^m$ is a polyhedron, then its pre-image under $A \in \RR^{m \times n}$ is a polyhedron.
+	\end{prop}
+	
+	\begin{proof}
+		WIP.
+	\end{proof}
+	
+	\section{Convex Functions}
+	
+	\begin{prop}
+		The entropy function, defined as:
+		\begin{gather*}
+			f(x) = -\sum^n_{i=1} x_i \log(x_i)
+		\end{gather*}
+		is strictly concave over the domain $\{x \in \RR^n_{++}: \sum^n_{i=1}x_i = 1\}$
+	\end{prop}
+	
+	\begin{proof}
+		The derivative of $f(x) = -u\log(x)$ is $-(1 + \log(x))$, which is strictly decreasing, thus strict concavity of $f$. The sum of a strictly concave function with another concave function is strictly concave, thus strict concavity of the entropy function.
+	\end{proof}
+	
 \end{document}
