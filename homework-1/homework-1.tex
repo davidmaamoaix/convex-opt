@@ -112,8 +112,28 @@
 			0&0\\0&1	
 		\end{bmatrix}
 		\end{equation*}
+		
+		The set $S = \{(x, y):y \geq 0.5^x\}$ is both closed and convex, yet its image under $A$ is $0 \times (0, \infty]$, which is not closed.
 	\end{proof}
 	
-	The image of the set $S = \{(x, y):y \geq 0.5^x\}$ is both closed and convex, yet its image under $A$ is $0 \times (0, \infty]$, which is not closed.
+	\begin{prop}
+		Given polyhedron $P \subseteq \RR^n$, its image $A(P)$ under $A \in \RR^{m \times n}$ is a polyhedron.
+	\end{prop}
+	
+	\begin{proof}
+		Consider set $O = \{(x, y): Cx \leq c, y=Ax\}$ for $x \in P$ and  some arbitrary constraint of matrix $C$ and constant $c$. $O$ is polyhedral as it can be rewritten as a set of linear (in)equalities:
+		\begin{align*}
+			&O = \{(x, y): Cx \leq c, y=Ax\}\\
+			\iff &O = \{(x, y): Cx \leq c, y \leq Ax, y \geq Ax\} \\
+			\iff &O = \{(x, y): Cx \leq c, y - Ax\leq 0, Ax - y \leq 0\}
+		\end{align*}
+		
+		The projection $f: (x, y) \to y$ preserves polyhedron, as indicated by the fact that (provided in proposition):
+		\begin{gather*}
+			P \subseteq \RR^{m + n} \text{ is a polyhedron} \Rightarrow \{x \in \RR^n: (x, y) \in P\} \text{ is a polyhedron}
+		\end{gather*}
+		
+		Since $O$ is polyhedral, $f(O)$ preserves polyhedron and yields $P$. Therefore $P$ is a polyhedron.
+	\end{proof}
 	
 \end{document}
