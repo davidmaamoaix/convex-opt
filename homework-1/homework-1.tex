@@ -114,7 +114,7 @@
 		\end{bmatrix}
 		\end{equation*}
 		
-		The set $S = \{(x, y):y \geq 0.5^x\}$ is both closed and convex, yet its image under $A$ is $0 \times (0, \infty]$, which is not closed.
+		The set $S = \{(x, y):y \geq 0.5^x\}$ is both closed and convex, yet its image under $A$ is $0 \times (0, \infty)$, which is not closed.
 	\end{proof}
 	
 	\begin{prop}
@@ -195,6 +195,18 @@
 		 \end{gather*}
 		 
 		 Therefore $f$ is convex.
+	\end{proof}
+	
+	\begin{prop}
+		Given an example of a strictly convex function that does not  attain its infimum.
+	\end{prop}
+	
+	\begin{proof}
+		The function:
+		\begin{gather*}
+			f(x) = \frac{1}{x}
+		\end{gather*}
+		is strictly convex, as its derivative, $f'(x) = -\frac{1}{x^2}$ is strictly increasing. $f$ does not attain its infimum at $0$ as its range is $(0, \infty)$.
 	\end{proof}
 	
 \end{document}
