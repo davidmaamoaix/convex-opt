@@ -17,6 +17,7 @@
 \newcommand{\iv}[1]{\langle #1 \rangle}
 \newcommand{\adj}{\text{adj}}
 \newcommand{\pmax}{\text{pmax}}
+\newcommand{\dom}{\text{dom}}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 \theoremstyle{definition}
@@ -156,6 +157,44 @@
 	
 	\begin{proof}
 		The derivative of $f(x) = -u\log(x)$ is $-(1 + \log(x))$, which is strictly decreasing, thus strict concavity of $f$. The sum of a strictly concave function with another concave function is strictly concave, thus strict concavity of the entropy function.
+	\end{proof}
+	
+	\begin{prop}
+		Consider twice-differentiable function $f$ over a convex domain. The following statements are equivalent:
+		\begin{enumerate}
+			\item $f$ is convex.
+			\item The gradient $\nabla f$ is monotone: $(\nabla f(x) - \nabla f(y))^\top (x - y) \geq 0$.
+		\end{enumerate}
+	\end{prop}
+	
+	\begin{proof}
+		If $f$ is a convex function, then its gradient must be non-decreasing, and thus for any $x, y \in \dom(f)$:
+		\begin{align*}
+			f(y) &\geq f(x) + \nabla f(x)^\top (y - x) \\
+			f(x) &\geq f(y) + \nabla f(y)^\top (x - y)
+		\end{align*}
+		
+		Adding the LHS and RHS shows that convexity implies gradient monotonicity:
+		\begin{align*}
+			&f(x) + f(y) \geq f(x) + f(y) + \nabla f(x)^\top (y - x) + \nabla f(y)^\top (x - y) \\
+			\iff &f(x) + f(y) - (f(x) + f(y)) \geq -\nabla f(x)^\top (x - y) + \nabla f(y)^\top (x - y) \\
+			\iff &0 \geq (\nabla f(y) - \nabla f(x))^\top (x - y) \\
+			\iff &0 \leq (\nabla f(x) - \nabla f(y))^\top (x - y)
+		\end{align*}
+		
+		For the reverse, consider the interpolation function $l(t) = f(x + t * (y - x))$ for any $x, y \in \dom(f)$ and $t \in [0, 1]$. Its derivative with respect to $t$ is $l'(t) = \nabla f(x + t * (y - x))^\top (y - x)$. Observe that $l'(t) \geq l'(0)$ for any $t$ as $\nabla f$ is monotone. Therefore:
+		\begin{align*}
+			&\int^1_0 l'(t) \diff t \geq l'(0) \\
+			\Rightarrow &l(0) + \int^1_0 l'(t) \diff t \geq l(0) + l'(0) \\
+			\Rightarrow &l(1) \geq l(0) + l'(0)
+		\end{align*}
+		
+		 Since $f(x) = l(0)$ and $f(y) = l(1)$:
+		 \begin{gather*}
+		 	l(1) \geq l(0) + l'(0) \iff f(y) \geq \nabla f(x)^\top (y - x)
+		 \end{gather*}
+		 
+		 Therefore $f$ is convex.
 	\end{proof}
 	
 \end{document}
