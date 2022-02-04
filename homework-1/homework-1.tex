@@ -18,6 +18,7 @@
 \newcommand{\adj}{\text{adj}}
 \newcommand{\pmax}{\text{pmax}}
 \newcommand{\dom}{\text{dom}}
+\newcommand{\conv}{\text{conv}}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 \theoremstyle{definition}
@@ -207,6 +208,32 @@
 			f(x) = \frac{1}{x}
 		\end{gather*}
 		is strictly convex, as its derivative, $f'(x) = -\frac{1}{x^2}$ is strictly increasing. $f$ does not attain its infimum at $0$ as its range is $(0, \infty)$.
+	\end{proof}
+	
+	\begin{prop}
+		A twice differentiable, strongly convex function is coercive and hence attain its infimum.
+	\end{prop}
+	
+	\begin{proof}
+		WIP.
+	\end{proof}
+	
+	\begin{prop}
+		The maximum of a convex function over a bounded polyhedron must occur at one of the vertices.
+	\end{prop}
+	
+	\begin{proof}
+		Consider vertices $V = \{v_1, \dots, v_n\}$ and the polyhedron $P = \conv(V)$ that $V$ forms. All points in $P$ can be written as some convex combination of $V$ for some $\lambda$: $\sum^n_{i=1} \lambda_i v_i$ given that $\sum^n_{i = 1} \lambda_i = 1$ and $\lambda_i \geq 0$. Due to convexity of $f$:
+		\begin{gather*}
+			f(\sum^n_{i=1} \lambda_i v_i) \leq \sum^n_{i=1} \lambda_i f(v_i)
+		\end{gather*}
+		
+		Since $\lambda_i \leq 1$ for all $i$:
+		\begin{gather*}
+			\sum^n_{i=1} \lambda_i f(v_i) \leq \max_i f(v_i)
+		\end{gather*}
+		
+		Therefore the maximum of $f$ over $P$ occurs at one of its vertices.
 	\end{proof}
 	
 \end{document}
