@@ -257,7 +257,17 @@
 	\end{prop}
 	
 	\begin{proof}
-		WIP.
+		The Hessian of $x^2/y + y$ is:
+		\begin{gather*}
+		\begin{bmatrix}
+			2/y & -2x / y^2 \\
+			-2x / y^2 & 2x^2 / y^3
+		\end{bmatrix}
+		\end{gather*}
+		
+		Its upper-left sub-matrix has non-negative determinant over the domain $y > 0$, and its determinant $\frac{4x^2}{y^4} - \frac{4x^2}{y^4} = 0$ is non-negative, showing that $H(g)$ is positive semidefinite, thus $g(x, y)$ is convex.
+		
+		The sum of convex functions preserves convexity, therefore the above objective function is convex over a convex domain, thus it is a convex problem.
 	\end{proof}
 	
 	\begin{prop}
@@ -274,6 +284,21 @@
 		\begin{gather*}
 			\frac{x^2}{\mo{x}} + \mo{x} \implies \mo{x} + \mo{x} = 2\mo{x}
 		\end{gather*}
+	\end{proof}
+	
+	\begin{prop}
+		Proof that minimizing $\sigma \geq 0$ in the above problem gives the $\ell_1$ penalized problem $\min_\beta f(\beta) + \lambda \Vert \beta \Vert_1$.
+	\end{prop}
+	
+	\begin{proof}
+		Considering the proof from \textbf{3.2}:
+		\begin{align*}
+			&\min_{\beta,\ \sigma \geq 0} f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} g(\beta_i, \sigma_i) \\
+			\implies &\min_\beta \left[ f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} \min_{\sigma_i} g(\beta_i, \sigma_i) \right] \\
+			\implies &\min_\beta f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} 2 \lvert \beta_i \rvert \\
+			\implies &\min_\beta f(\beta) + \lambda \sum_{i=1}^{n} \lvert \beta_i \rvert \\
+			\implies &\min_\beta f(\beta) + \lambda \Vert \beta \Vert_1
+		\end{align*}
 	\end{proof}
 	
 \end{document}
