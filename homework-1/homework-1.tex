@@ -10,6 +10,7 @@
 \usepackage{indentfirst}
 
 \newcommand{\mo}[1]{\lvert #1 \rvert}
+\newcommand{\mmo}[1]{\Vert #1 \Vert}
 \newcommand{\mos}[1]{\lvert #1 \rvert^2}
 \newcommand{\mov}[1]{\lvert \vec{#1} \rvert}
 \newcommand{\RR}{\mathbb{R}}
@@ -287,7 +288,7 @@
 	\end{proof}
 	
 	\begin{prop}
-		Proof that minimizing $\sigma \geq 0$ in the above problem gives the $\ell_1$ penalized problem $\min_\beta f(\beta) + \lambda \Vert \beta \Vert_1$.
+		Proof that minimizing $\sigma \geq 0$ in the above problem gives the $\ell_1$ penalized problem $\min_\beta f(\beta) + \lambda \mmo{\beta}_1$.
 	\end{prop}
 	
 	\begin{proof}
@@ -297,8 +298,31 @@
 			\implies &\min_\beta \left[ f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} \min_{\sigma_i} g(\beta_i, \sigma_i) \right] \\
 			\implies &\min_\beta f(\beta) + \frac{\lambda}{2}\sum_{i=1}^{n} 2 \lvert \beta_i \rvert \\
 			\implies &\min_\beta f(\beta) + \lambda \sum_{i=1}^{n} \lvert \beta_i \rvert \\
-			\implies &\min_\beta f(\beta) + \lambda \Vert \beta \Vert_1
+			\implies &\min_\beta f(\beta) + \lambda \mmo{\beta}_1
 		\end{align*}
+	\end{proof}
+	
+	\begin{prop}
+		$f$ is continuous and twice-differentiable. Proof the equivalence of:
+		\begin{enumerate}
+			\item $\nabla f$ is Lipschitz with constant $L$.
+			\item $(\nabla f(x) - \nabla f(y))^\top(x - y) \leq L \Vert x - y \Vert_2^2$ for all $x, y$.
+			\item $\nabla^2 f(x) \preceq LI$ for all $x$.
+			\item $f(y) \leq f(x) + \nabla f(x)^\top (y - x) + \frac{L}{2}\Vert y - x \Vert^2_2$ for all $x, y$.
+		\end{enumerate}
+	\end{prop}
+	
+	\begin{proof}
+		$1 \to 2$, $2 \to 3$, $3 \to 4$, $4 \to 2$ and $3 \to 1$:
+		\begin{enumerate}
+			\item For all $x, y$, $\nabla f$ is $L$-Lipschitz implies $\mmo{\nabla f(x) - \nabla f(y)}_2 \leq L\mmo{x - y}_2$. Then:
+			\begin{align*}
+				&\mmo{\nabla f(x) - \nabla f(y)}_2 \leq L\mmo{x - y}_2 \\
+				\implies &\mmo{\nabla f(x) - \nabla f(y)}_2 * \mmo{x - y}_2\leq L\mmo{x - y}_2 * \mmo{x - y}_2 \\
+				\implies &(\nabla f(x) - \nabla f(y))^\top(x - y) \leq \mmo{\nabla f(x) - \nabla f(y)}_2 * \mmo{x - y}_2\leq L\mmo{x - y}_2 * \mmo{x - y}_2 \\
+				\implies &(\nabla f(x) - \nabla f(y))^\top(x - y) \leq L \mmo{x - y}_2^2
+			\end{align*}
+		\end{enumerate}
 	\end{proof}
 	
 \end{document}
